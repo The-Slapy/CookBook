@@ -1,0 +1,395 @@
+/* Estilos para enlaces */
+a {
+  color: #08415C;
+  text-decoration: none;
+}
+
+/* Margen global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo del header con logo a la derecha */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* Esto pone el h1 a la izquierda y el logo a la derecha */
+}
+
+header .logo {
+  max-width: 100px; /* Ajusta el tamaño según lo necesites */
+  height: auto;
+  margin-left: 20px; /* Espaciado entre el logo y el borde derecho */
+}
+
+/* Estilos para el título */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #27456F;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pestaña lateral */
+.menu-lateral {
+  position: fixed;
+  top: 100px; /* Ajustado para evitar solapamiento con el header */
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 80px);
+  background-color: #f0f0f0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.menu li a:hover {
+  background-color: #e0e0e0;
+  color: #08415C;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo para submenús ocultos */
+.menu li ul {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 20px;
+  transition: max-height 0.3s ease-out;
+  display: block;
+}
+
+.menu li.open > ul {
+  max-height: 1000px; /* Asegura que se pueda expandir el submenú */
+}
+
+.submenu {
+  display: none; /* Asegura que los submenús solo se muestren con JS */
+}
+
+/* Contenido principal */
+.contenido-lateral {
+  margin-left: calc(200px + 20px); /* Considera el padding */
+  padding: 20px;
+  margin-top: 120px;
+}
+
+/* Contenido */
+.contenido {
+  display: none;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+/* Datos Máquina */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Encabezado de la tabla */
+th {
+  background-color: #f0f0f0;
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Filas alternadas */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Fila al pasar el ratón */
+tr:hover {
+  background-color: #e2e2e2;
+}
+
+/* Fila seleccionada */
+tr.selected {
+  background-color: #D3E0EA;
+}
+
+/* Bordes de celdas */
+td, th {
+  border: 1px solid #ddd;
+}
+
+/* Estilo para el buscador */
+input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Estilo para la tabla cuando no hay resultados de búsqueda */
+.noSearch {
+  display: none;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/* Datos de fallas */
+.search-bar-unique {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar-unique input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.solution-list-unique {
+  padding: 20px;
+  list-style-type: none;
+  margin: 0;
+}
+
+.solution-item-unique img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto; /* Mantiene la proporción */
+  display: block; /* Elimina espacios en línea */
+}
+
+.solution-item-unique {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para submenús ocultos */
+.menu li ul {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 20px;
+  transition: max-height 0.3s ease-out;
+}
+
+.menu li.open > ul {
+  max-height: 1000px; /* Ajusta la altura máxima para que se expanda */
+}
+
+/* Estilos para el h3 en Fallas */
+h3 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+table.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table.pdf-table th, table.pdf-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table.pdf-table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+table.pdf-table td a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+table.pdf-table td a:hover {
+  text-decoration: underline;
+}
+
+/* Reducir el tamaño de la columna de PDFs */
+table.pdf-table th:nth-child(1), table.pdf-table td:nth-child(1) {
+  width: 20%; /* Ajusta según lo necesario */
+  max-width: 150px; /* Máximo ancho */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ajuste de celdas */
+table.pdf-table td {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Ajuste de footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-top-left-radius: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Estilos para el tema oscuro */
+
+header.dark-theme { /*Header*/
+  background-color: #283a41;
+  color: #ffffff;
+}
+
+.menu-lateral.dark-theme { /*Menu*/
+  background-color: #1c3138;
+}
+
+.menu li a.dark-theme { /*SubMenu*/
+  background-color: #1c3138;
+  color: #ffffff;
+}
+
+a.dark-theme {  /*Links*/
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu li a:hover.dark-theme {
+  background-color: #08415C;
+  color: #ffffff;
+}
+
+.footer.dark-theme { /*Pie de pagina*/
+  background-color: #172b31;
+  color: #ffffff;
+}
+
+body.dark-theme { /*Fondo*/
+  background-color: #203c44;
+  color: #ffffff;
+}
+
+table.dark-theme {  /*Datos Maquinas*/
+  background-color: #284f5a;
+  color: #ffffff;
+}
+
+div.dark-theme {  /*Fondo de Contenido*/
+  background-color: #203c44;
+  color: #ffffff;
+}
+
+/* Estilo para el cuadro de búsqueda en modo oscuro */
+body.dark-theme input[type="text"] {
+  background-color: #284f5a; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+  border: 1px solid #1c3138; /* Borde oscuro */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño del texto */
+}
+
+body.dark-theme input[type="text"]::placeholder {
+  color: #b0c4c8; /* Color del texto del placeholder */
+}
+
+/* Encabezado de la tabla en modo oscuro */
+table.dark-theme th {
+  background-color: #283a41; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+  border-bottom: 2px solid #1c3138; /* Borde oscuro */
+}
+
+/* Filas alternadas en modo oscuro */
+table.dark-theme tr:nth-child(even) {
+  background-color: #1c3138; /* Fondo oscuro para filas alternadas */
+  color: #ffffff;
+}
+
+/* Fila al pasar el ratón en modo oscuro */
+table.dark-theme tr:hover {
+  background-color: #3a4f5a; /* Fondo más claro al pasar el ratón */
+  color: #ffffff;
+}
+
+/* Modo oscuro para la sección de fallas */
+body.dark-theme .contenido-lateral {
+  background-color: #203c44; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+}
+
+body.dark-theme .search-bar-unique input {
+  background-color: #284f5a; /* Fondo del buscador */
+  color: #ffffff; /* Texto del input */
+  border: 1px solid #1c3138; /* Borde oscuro */
+}
+
+body.dark-theme .solution-list-unique {
+  background-color: #203c44; /* Fondo de la lista */
+  color: #ffffff; /* Texto de la lista */
+}
+
+body.dark-theme .solution-list-unique li {
+  background-color: #1c3138; /* Fondo de los elementos de la lista */
+  color: #ffffff; /* Texto de los elementos */
+  border-bottom: 1px solid #3a4f5a; /* Borde entre elementos */
+}

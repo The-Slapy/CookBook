@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookBook</title>
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <link rel="icon" href="../images/pngwing.com-2.ico">
+</head>
+<body>
+    
+    <header>    <!-- Encabezado -->
+        <h1>CookBook</h1>
+        <img src="../images/Logo_Sanmina.png" alt="Logo de CookBook" class="logo">
+    </header>
+    
+    
+    <div class="menu-lateral">  <!--Pestaña lateral-->
+        <ul class="menu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li>
+                <a href="#" onclick="toggleMenu('AOI')">AOI</a>
+                <ul id="AOI" style="display: none;">
+                    <li>
+                        <a href="#" onclick="toggleMenu('SAKI')">SAKI</a>
+                        <ul id="SAKI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_SAKI')">Manuales</a>
+                                <ul id="MANUALES_SAKI" style="display: none;">
+                                    <li><a href="../html/AOI_MS_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="../html/AOI_MS_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="../html/AOI_MS_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="../html/AOI_MS_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../html/AOI_FR_Saki.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="toggleMenu('VITROX_AOI')">VITROX</a>
+                        <ul id="VITROX_AOI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_VITROX')">Manuales</a>
+                                <ul id="MANUALES_VITROX" style="display: none;">
+                                    <li><a href="../html/AOI_MV_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="../html/AOI_MV_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="../html/AOI_MV_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="../html/AOI_MV_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../html/AOI_FR_Vitrox.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('AXI')">AXI</a>
+                <ul id="AXI" style="display: none;">
+                    <li><a href="../html/AXI_M_P_H.html">Hardware Proveedor</a></li>
+                    <li><a href="../html/AXI_M_P_S.html">Software Proveedor</a></li>
+                    <li><a href="../html/AXI_M_S_H.html">Hardware Sanmina</a></li>
+                    <li><a href="../html/AXI_M_S_S.html">Software Sanmina</a></li>
+                    <li><a href="../html/AXI_FR.html">Fallas Recurrentes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('DAGE')">DAGE</a>
+                <ul id="DAGE" style="display: none;"></ul>
+            </li>
+            <li><a href="../html/Datos_Maquinas.html">Datos Máquinas</a></li>
+            <li><a href="../html/Enlaces.html">Enlaces</a></li>
+        </ul>
+    </div>
+    
+    <div class="contenido-lateral"> <!--Informacion-->
+        <div class="Presentacion">
+            <h2>Datos de las Maquinas</h2>
+
+            <div class="Buscar" style="padding:50px 50px; height: 1000px; margin-right: 5%">
+                <form>
+                    <strong>Buscar equipo:</strong> <input id="searchTerm" type="text" onkeyup="doSearch()">
+                </form> <!--Motor de busqueda-->
+
+                <table id="DatosIP" border="3" align="center">
+                    
+                    <thead>
+                        <tr align="center" bgcolor="#898787">
+                            <th>Equipo</th>
+                            <th>Modelo</th>
+                            <th>Serie</th>
+                            <th>AOI / AXI</th>
+                            <th>PLR / VVTS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr align="center">
+                            <td>AOI 598A</td> <!--id-->
+                            <td>N/A</td> <!--Modelo-->
+                            <td>N/A</td> <!--Serie-->
+                            <td>10.249.49.88</td> <!--AOI / AXI-->
+                            <td>172.24.156.230</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 598B</td> <!--id-->
+                            <td>N/A</td> <!--Modelo-->
+                            <td>N/A</td> <!--Serie-->
+                            <td>10.249.49.87</td> <!--AOI / AXI-->
+                            <td>172.24.156.231</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 599A</td> <!--id-->
+                            <td>BF-3Di-Z1</td> <!--Modelo-->
+                            <td>383016035</td> <!--Serie-->
+                            <td>10.249.49.90</td> <!--AOI / AXI-->
+                            <td>172.24.156.218</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 599B</td> <!--id-->
+                            <td>3Di-LS2</td> <!--Modelo-->
+                            <td>NB21709</td> <!--Serie-->
+                            <td>10.249.49.91</td> <!--AOI / AXI-->
+                            <td>172.24.156.219</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 600A</td> <!--id-->
+                            <td>3Di-LS2</td> <!--Modelo-->
+                            <td>N618416</td> <!--Serie-->
+                            <td>10.249.49.92</td> <!--AOI / AXI-->
+                            <td>172.24.156.220</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 600B</td> <!--id-->
+                            <td>3Di-LS2</td> <!--Modelo-->
+                            <td>N618439</td> <!--Serie-->
+                            <td>10.249.49.93</td> <!--AOI / AXI-->
+                            <td>172.24.156.221</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 601</td> <!--id-->
+                            <td>BF-3Di-L1</td> <!--Modelo-->
+                            <td>381026104</td> <!--Serie-->
+                            <td>10.249.49.94</td> <!--AOI / AXI-->
+                            <td>172.24.156.222</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 602</td> <!--id-->
+                            <td>3Di-ZS2</td> <!--Modelo-->
+                            <td>N621503</td> <!--Serie-->
+                            <td>10.249.49.95</td> <!--AOI / AXI-->
+                            <td>172.24.156.223</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AOI 603</td> <!--id-->
+                            <td>V510i</td> <!--Modelo-->
+                            <td>MY16420244</td> <!--Serie-->
+                            <td>10.249.49.96</td> <!--AOI / AXI-->
+                            <td>10.249.49.100</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AXI 1</td> <!--id-->
+                            <td>V810i S2 EX</td> <!--Modelo-->
+                            <td>MY10133391S2EX</td> <!--Serie-->
+                            <td>10.249.49.191</td> <!--AOI / AXI-->
+                            <td>172.24.156.1</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AXI 2</td> <!--id-->
+                            <td>V810i S2 EX</td> <!--Modelo-->
+                            <td>MY10133201S2EX</td> <!--Serie-->
+                            <td>10.249.49.98</td> <!--AOI / AXI-->
+                            <td>172.24.156.226</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AXI 3</td> <!--id-->
+                            <td>V810i S2 EX</td> <!--Modelo-->
+                            <td>MY10133176S2EX</td> <!--Serie-->
+                            <td>10.249.49.99</td> <!--AOI / AXI-->
+                            <td>172.24.156.227</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AXI 4</td> <!--id-->
+                            <td>V810i S2 EX</td> <!--Modelo-->
+                            <td>MY10133174S2EX</td> <!--Serie-->
+                            <td>10.249.49.97</td> <!--AOI / AXI-->
+                            <td>172.24.156.225</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center"> 
+                            <td>AXI 5</td> <!--id-->
+                            <td>V810i S2 XXL</td> <!--Modelo-->
+                            <td>MY13138046S2</td> <!--Serie-->
+                            <td>10.249.49.190</td> <!--AOI / AXI-->
+                            <td>172.24.156.228</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center">
+                            <td>AXI 6</td> <!--id-->
+                            <td>V810i S2 XLT</td> <!--Modelo-->
+                            <td>MY13138280XLT</td> <!--Serie-->
+                            <td>10.249.49.195</td> <!--AOI / AXI-->
+                            <td>10.249.49.189</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center"> 
+                            <td>AXI 7</td> <!--id-->
+                            <td>V810i S2 XXL</td> <!--Modelo-->
+                            <td>MY13138009</td> <!--Serie-->
+                            <td>N/A</td> <!--AOI / AXI-->
+                            <td>172.24.156.229</td> <!--PLR / VVTS-->
+                        </tr>
+                        <tr align="center" class="noSearch hide"> <td colspan="5"></td> </tr> <!--SIEMPRE ULTIMA LINEA-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        by: Gabriel Rmz
+        <button id="theme-toggle" class="theme-toggle">Cambiar Tema</button>
+    </div>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

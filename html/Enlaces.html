@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookBook</title>
+    <link rel="stylesheet" href="../css/styles.css"/>
+	<link rel="icon" href="../images/pngwing.com-2.ico">
+</head>
+
+<header>    <!-- Encabezado -->
+    <h1>CookBook</h1>
+    <img src="../images/Logo_Sanmina.png" alt="Logo de CookBook" class="logo">
+</header>
+
+<body>
+    
+    <div class="menu-lateral">  <!--Pestaña lateral-->
+        <ul class="menu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li>
+                <a href="#" onclick="toggleMenu('AOI')">AOI</a>
+                <ul id="AOI" style="display: none;">
+                    <li>
+                        <a href="#" onclick="toggleMenu('SAKI')">SAKI</a>
+                        <ul id="SAKI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_SAKI')">Manuales</a>
+                                <ul id="MANUALES_SAKI" style="display: none;">
+                                    <li><a href="../html/AOI_MS_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="../html/AOI_MS_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="../html/AOI_MS_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="../html/AOI_MS_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../html/AOI_FR_Saki.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="toggleMenu('VITROX_AOI')">VITROX</a>
+                        <ul id="VITROX_AOI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_VITROX')">Manuales</a>
+                                <ul id="MANUALES_VITROX" style="display: none;">
+                                    <li><a href="../html/AOI_MV_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="../html/AOI_MV_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="../html/AOI_MV_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="../html/AOI_MV_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../html/AOI_FR_Vitrox.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('AXI')">AXI</a>
+                <ul id="AXI" style="display: none;">
+                    <li><a href="../html/AXI_M_P_H.html">Hardware Proveedor</a></li>
+                    <li><a href="../html/AXI_M_P_S.html">Software Proveedor</a></li>
+                    <li><a href="../html/AXI_M_S_H.html">Hardware Sanmina</a></li>
+                    <li><a href="../html/AXI_M_S_S.html">Software Sanmina</a></li>
+                    <li><a href="../html/AXI_FR.html">Fallas Recurrentes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('DAGE')">DAGE</a>
+                <ul id="DAGE" style="display: none;"></ul>
+            </li>
+            <li><a href="../html/Datos_Maquinas.html">Datos Máquinas</a></li>
+            <li><a href="../html/Enlaces.html">Enlaces</a></li>
+        </ul>
+    </div>
+    
+    <div class="contenido-lateral"> <!--Informacion-->
+        <h2>Enlaces</h2>
+            <br>
+        <a href=https://gdl6amappw03.am.sanm.corp/PartMarking/MasterPage_Login.aspx target=”_blank”>Part Marking</a>
+            <br>
+        <a href="http://plant8.sanmina.com/GoAppServiceRequest/#!/login/" target=”_blank”>Levantar Ticket</a>
+            <br>
+            <br>
+            <br>
+            <br>
+        <a href="https://plmprod.sanmina.com/Agile/PLMServlet" target=”_blank”>Agile</a>
+            <br>
+        <a href="https://e51-03-sanm-mes.42-q.com/cmms-work-request" target=”_blank”>CMM</a>
+            <br>
+            <br>
+            <br>
+            <br>
+        <a href="https://riltestgdl2.sanmina.com/EnterpriseGEM-war/login/page/login.jsf?rur=/toolcrib/catalog/tcb_item_catalog.jsf" target=”_blank”>Tool</a>
+            <br>
+        <a href="https://gdl1amtyaw04.sanmina.com/AES.KIO.US.WEB74/content/Default.aspx" target=”_blank”>Kiosko</a>
+            <br>
+        <a href="https://universidadvirtual.sanmina.com/" target=”_blank”>Universidad Sanmina</a>
+            <br>
+        <a href="https://sites.google.com/a/sanmina.com/comunicaciones-mexico/home?authuser=0" target=”_blank”>Comunicaciones Sanmina</a>
+            <br>
+
+    </div>
+    
+<div class="footer">
+    by: Gabriel Rmz
+    <button id="theme-toggle" class="theme-toggle">Cambiar Tema</button>
+</div>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

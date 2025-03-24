@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookBook</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="icon" href="images/pngwing.com-2.ico">
+</head>
+
+<header> <!-- Encabezado -->
+    <h1>CookBook</h1>
+    <img src="images/Logo_Sanmina.png" alt="Logo de CookBook" class="logo">
+</header>
+
+<body>
+
+<div class="menu-lateral"> <!-- Pestaña lateral -->
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li> 
+            <li>
+                <a href="#" onclick="toggleMenu('AOI')">AOI</a>
+                <ul id="AOI" style="display: none;">
+                    <li>
+                        <a href="#" onclick="toggleMenu('SAKI')">SAKI</a>
+                        <ul id="SAKI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_SAKI')">Manuales</a>
+                                <ul id="MANUALES_SAKI" style="display: none;">
+                            <!--    <li><a href="html\pagina_en_proceso.html">Hardware Proveedor</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Software Proveedor</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Hardware Sanmina</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Software Sanmina</a></li> -->
+                                    <li><a href="html/AOI_MS_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="html/AOI_MS_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="html/AOI_MS_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="html/AOI_MS_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="html/AOI_FR_Saki.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" onclick="toggleMenu('VITROX_AOI')">VITROX</a>
+                        <ul id="VITROX_AOI" style="display: none;">
+                            <li>
+                                <a href="#" onclick="toggleMenu('MANUALES_VITROX')">Manuales</a>
+                                <ul id="MANUALES_VITROX" style="display: none;">
+                            <!--    <li><a href="html\pagina_en_proceso.html">Hardware Proveedor</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Software Proveedor</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Hardware Sanmina</a></li>
+                                    <li><a href="html\pagina_en_proceso.html">Software Sanmina</a></li> -->
+                                    <li><a href="html/AOI_MV_P_H.html">Hardware Proveedor</a></li>
+                                    <li><a href="html/AOI_MV_P_S.html">Software Proveedor</a></li>
+                                    <li><a href="html/AOI_MV_S_H.html">Hardware Sanmina</a></li>
+                                    <li><a href="html/AOI_MV_S_S.html">Software Sanmina</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="html/AOI_FR_Vitrox.html">Fallas Recurrentes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('AXI')">AXI</a>
+                <ul id="AXI" style="display: none;">
+            <!--    <li><a href="html\pagina_en_proceso.html">Hardware</a></li>
+                    <li><a href="html\pagina_en_proceso.html">Software</a></li>
+                    <li><a href="html\pagina_en_proceso.html">Fallas Recurrentes</a>    -->
+                    <li><a href="html/AXI_M_P_H.html">Hardware</a></li>
+                    <li><a href="html/AXI_M_P_S.html">Software</a></li>
+                    <li><a href="html/AXI_FR.html">Fallas Recurrentes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="toggleMenu('DAGE')">DAGE</a>
+                <ul id="DAGE" style="display: none;"></ul>
+            </li>
+            <li><a href="html/Datos_Maquinas.html">Datos Máquinas</a></li>
+            <li><a href="html/Enlaces.html">Enlaces</a></li>
+        </ul>
+</div>
+   
+<div class="contenido-lateral">  <!-- Información -->
+        <h2>Ayuda para el área de Ingeniería de Pruebas</h2>
+        <br>
+        <p>Esta página se realiza para facilitar el aprendizaje teniendo información más accesible en cualquier máquina.</p>
+        <br>
+        <p>En esta podrás encontrar desde manuales hasta videos de todos los equipos a los que el área le damos soporte.</p>
+        <br>
+        <!-- <p>¿Tienes alguna mejora para el CookBook?<br>Hazla saber en el siguiente formulario.</p> 
+        <br>    -->
+        <p>¿Crees que hace falta añadir otra solución?<br>Utiliza el siguiente <a href="html/formulario.html" target="_blank"><u>formulario.</u></a></p>
+</div>
+
+<div class="footer">
+    by: Gabriel Rmz
+    <button id="theme-toggle" class="theme-toggle">Cambiar Tema</button>
+</div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

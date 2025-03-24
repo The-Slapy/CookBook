@@ -1,0 +1,23 @@
+-Asegúrate de estar en el directorio de tu proyecto:
+
+cd /ruta/a/tu/proyecto
+
+-Verifica el estado de tus cambios: Esto muestra los archivos modificados, añadidos o eliminados.
+
+git status
+
+-Añade los cambios al área de preparación (staging area): Para añadir todos los archivos modificados:
+git add .
+
+O para añadir un archivo específico:
+git add nombre_del_archivo
+
+-Crea un commit con un mensaje descriptivo:
+git commit -m "Descripción de los cambios realizados"
+
+-Sube los cambios a tu repositorio remoto en GitHub:
+Si estás trabajando en la rama principal (por ejemplo, main):
+git push origin main
+
+Si trabajas en una rama diferente (por ejemplo, feature-branch):
+git push origin feature-branch

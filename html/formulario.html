@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario CookBook</title>
+    <script src="../libs/jszip.min.js"></script>
+
+    <style>
+        .editable-box-problema, .editable-box-solucion {
+            width: 50%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            cursor: text;
+            background-color: white;
+        }
+        .editable-box-problema { height: 100px; }
+        .editable-box-solucion { height: 200px; }
+
+        /* Estilos para enlaces */
+        a {
+        color: #08415C;
+        text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Formulario CookBook</h1>
+
+    <p><a href="https://docs.google.com/presentation/d/17frZk13bvdz_-7BGCGHDjTllzqhrJSeuBWBDkJV3Zls/edit?usp=sharing" target="_blank">Guia de uso</a> // Diapositiva 6</p>
+
+    <form id="solutionForm">
+        <label for="falla"><strong>Falla:</strong></label>
+        <input type="text" id="falla" required><br><br>
+
+        <label for="equipo"><strong>Equipo:</strong></label>
+        <select id="equipo">
+            <option value="AOI">AOI</option>
+            <option value="AXI">AXI</option>
+            <option value="DAGE">DAGE</option>
+        </select><br><br>
+
+        <label for="marca"><strong>Marca:</strong></label>
+        <select id="marca">
+            <option value="Saki">Saki</option>
+            <option value="Vitrox">Vitrox</option>
+        </select><br><br>
+
+        <label for="problema"><strong>Problema:</strong></label>
+        <p>
+        Usa . para especificar que es Enter.<br>
+        En caso de añadir imágenes usa //problemaA//, //problemaB// así sucesivamente por cada una.<br>
+        Cambia el nombre de tus imagenes a A, B, C, etc., donde A sería la primera, B la segunda…</p>
+        <div id="problema" class="editable-box-problema" contenteditable="true"></div><br>
+
+        <label for="problemImages"><strong>Imágenes del Problema:</strong></label>
+        <input type="file" id="problemImages" multiple accept="image/*"><br><br>
+
+        <label for="solucion"><strong>Solución:</strong></label>
+        <p>
+        Usa . para especificar que es Enter.<br>
+        En caso de añadir imágenes usa //solucionA//, //solucionB// así sucesivamente por cada una.<br>
+        Cambia el nombre de tus imagenes a 1, 2, 3, etc. donde 1 sería la primera, 2 la segunda…</p>
+        <div id="solucion" class="editable-box-solucion" contenteditable="true"></div><br>
+
+        <label for="solutionImages"><strong>Imágenes de la Solución:</strong></label>
+        <input type="file" id="solutionImages" multiple accept="image/*"><br><br>
+
+        <label for="tiempo"><strong>Tiempo Estimado:</strong></label>
+        <input type="text" id="tiempo" required><br><br>
+
+        <button type="submit">Generar y Descargar ZIP</button>
+    </form>
+
+    <script>
+        function cleanHTMLContent(content, type, prefix, idUnico) {
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = content;
+
+            // Convertir puntos en saltos de línea <br>
+            let formattedText = tempDiv.textContent.replace(/\.\s*/g, ".<br>");
+
+            // Reemplazar los placeholders por rutas de imágenes con formato `\"<img src=...>\\"`
+            formattedText = formattedText.replace(new RegExp(`//${type}([A-Z])//`, 'g'), (match, letter) => {
+                const imageIndex = letter.charCodeAt(0) - 65;
+                const imageName = `${prefix}_${idUnico}_${imageIndex + 1}.jpg`;
+                const imagePath = `../fallas/img_fallas/${imageName}`;
+                return `<br><img src=\\"${imagePath}\\" alt=\\"${imageName}\\"><br>`;
+            });
+
+            return formattedText.trim();
+        }
+
+        function generarID() {
+            return Math.floor(10000 + Math.random() * 90000);
+        }
+
+        async function imageToJPG(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob((blob) => resolve(blob), "image/jpeg", 0.9);
+                    };
+                };
+            });
+        }
+
+        async function processFiles(inputElement, prefix, idUnico, zip) {
+            const files = inputElement.files;
+            const filePromises = Array.from(files).map(async (file, index) => {
+                const fileName = `${prefix}_${idUnico}_${index + 1}.jpg`; // Forzar extensión a .jpg
+                const jpgBlob = await imageToJPG(file);
+                const fileData = await jpgBlob.arrayBuffer();
+                zip.file(fileName, fileData);
+            });
+            await Promise.all(filePromises);
+        }
+
+        document.getElementById("solutionForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const idUnico = generarID();
+            const falla = document.getElementById("falla").value;
+            const equipo = document.getElementById("equipo").value;
+            const marca = document.getElementById("marca").value;
+            const problema = cleanHTMLContent(document.getElementById("problema").innerHTML, 'problema', 'problem', idUnico);
+            const solucion = cleanHTMLContent(document.getElementById("solucion").innerHTML, 'solucion', 'solution', idUnico);
+            const tiempo = document.getElementById("tiempo").value;
+
+            const zip = new JSZip();
+
+            await Promise.all([
+                processFiles(document.getElementById("problemImages"), "problem", idUnico, zip),
+                processFiles(document.getElementById("solutionImages"), "solution", idUnico, zip)
+            ]);
+
+            const solutionData =
+`   
+     {
+        id: "${idUnico}",
+        falla: "${falla}",
+        problem: "${problema}",
+        category: "${equipo}-${marca}",
+        solution: "${solucion}",
+        timeEst: "${tiempo}"
+    },`;
+
+            zip.file(`solution_${idUnico}.txt`, solutionData);
+
+            const zipBlob = await zip.generateAsync({ type: "blob" });
+
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(zipBlob);
+            link.download = `solution_${idUnico}.zip`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+    </div>
+
+</body>
+</html>
