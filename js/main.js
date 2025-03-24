@@ -204,9 +204,16 @@ function applyTheme(theme) {
     contentLinks.forEach(link => {
         link.classList.toggle('dark-theme', theme === 'dark');
     });
-        // Aplicar la clase dark-theme a todas las filas de las tablas
+
+    // Aplicar la clase dark-theme a todas las filas de las tablas
     const rows = document.querySelectorAll('table tr:nth-child(even)');
     rows.forEach(row => {
+        row.classList.toggle('dark-theme', theme === 'dark');
+    });
+
+    // Aplicar la clase dark-theme a los PDFs cargados dinámicamente
+    const pdfRows = document.querySelectorAll('#tablaPDFs tbody tr');
+    pdfRows.forEach(row => {
         row.classList.toggle('dark-theme', theme === 'dark');
     });
 }
@@ -222,3 +229,12 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     applyTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 });
+
+// Detectar cambios en el DOM para aplicar el tema oscuro a nuevos elementos
+const observer = new MutationObserver(() => {
+    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    applyTheme(currentTheme);
+});
+
+// Configurar el observador para observar cambios en el cuerpo del documento
+observer.observe(document.body, { childList: true, subtree: true });
