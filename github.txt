@@ -19,5 +19,45 @@ git commit -m "Descripción de los cambios realizados"
 Si estás trabajando en la rama principal (por ejemplo, main):
 git push origin main
 
-Si trabajas en una rama diferente (por ejemplo, feature-branch):
+-Si trabajas en una rama diferente (por ejemplo, feature-branch):
 git push origin feature-branch
+
+-------------------
+
+¿Qué es una rama?
+Una rama es una línea de desarrollo independiente dentro de un repositorio. Por defecto, todos los repositorios tienen una rama principal llamada `main` o `master`. Puedes crear nuevas ramas para trabajar en características, correcciones de errores o experimentos sin afectar la rama principal.
+
+Flujo básico de trabajo con ramas:
+1. Crear una nueva rama:
+   git branch nombre-de-la-rama
+   Esto crea una nueva rama basada en la rama actual.
+
+2. Cambiar a una rama:
+   git checkout nombre-de-la-rama
+
+O, en versiones más recientes de Git:
+   git switch nombre-de-la-rama
+
+3. Trabajar en la nueva rama:
+   Realiza cambios, haz commits, y prueba tu código en esta rama sin afectar la rama principal.
+
+4. Fusionar una rama (merge):
+   Una vez que termines de trabajar en una rama, puedes fusionarla con otra (por ejemplo, `main`):
+   git checkout main
+   git merge nombre-de-la-rama
+
+5. Eliminar una rama (opcional):
+   Si ya no necesitas una rama, puedes eliminarla:
+   git branch -d nombre-de-la-rama
+
+Ventajas de usar ramas:
+- Trabajo paralelo: Diferentes desarrolladores pueden trabajar en diferentes ramas sin conflictos.
+- Seguridad: Puedes experimentar en una rama sin afectar el código estable en `main`.
+- Organización: Facilita la gestión de características, correcciones de errores y versiones.
+
+Ramas en GitHub:
+Cuando trabajas con un repositorio remoto en GitHub:
+- Puedes crear ramas directamente desde la interfaz web o desde tu máquina local.
+- Para subir una rama al repositorio remoto:
+  git push origin nombre-de-la-rama
+- Puedes abrir un Pull Request en GitHub para solicitar la revisión y fusión de tu rama con otra (como `main`).
