@@ -1,4 +1,28 @@
-const allSolutions = [
+const allSolutions = [   
+    {
+       id: "57254",
+       falla: "Sin red AOI",
+       problem: "Se perdio la red en la AOI.<br>",
+       category: "AOI-Saki",
+       solution: "Haz un ping a cualquier otra maquina.<br>Revisa que la IP sea estatica y tenga bien sus <a href=\"../html/Datos_Maquinas.html\"><u>datos</u></a>.<br>Verifica que el cable ethernet no tenga falso.<br>En caso de no poder conectar, apoyate con IT.<br>",
+       timeEst: "5 a 60 Min"
+    },
+    {
+       id: "14716",
+       falla: "Falla al iniciar la prueba",
+       problem: "Manda la siguiente alerta al iniciar la prueba.<br><br><img src=\"../fallas/img_fallas/problem_14716_1.jpg\" alt=\"problem_14716_1.jpg\"><br><br><img src=\"../fallas/img_fallas/problem_14716_2.jpg\" alt=\"problem_14716_2.jpg\"><br><br><img src=\"../fallas/img_fallas/problem_14716_3.jpg\" alt=\"problem_14716_3.jpg\"><br>La prueba continua, cuando termina de inspeccionar, se cierra el programa.<br>",
+       category: "AOI-Saki",
+       solution: "Nos menciona el error que tiene una falla con el MPVClient.<br>Revisamos que este deshabilitado.<br>Volvemos a probar la tarjeta.<br><br><img src=\"../fallas/img_fallas/solution_14716_1.jpg\" alt=\"solution_14716_1.jpg\"><br>",
+       timeEst: "< 5 Min"
+    },
+    {
+       id: "97535",
+       falla: "No lee la información la PLR",
+       problem: "La PLR recibe la información, pero no la abre.<br><br><img src=\"../fallas/img_fallas/problem_97535_1.jpg\" alt=\"problem_97535_1.jpg\"><br>",
+       category: "AOI-Vitrox",
+       solution: "Revisa que el disco duro de la PLR no este llene.<br>De ser asi, elimina información.<br>Asegurate de hacer respaldo de los Tiles en servidor 230.<br>Elimina información de C:\\Defects\\data.<br>En la AOI, vacia la carpeta C:\\cpi\\img.<br>Vacia el Index de la PLR.<br>Vuelve a probar la tarjeta.<br>",
+       timeEst: "< 5 Min"
+    },
     {
        id: "57519",
        falla: "Serial ilegible",
@@ -68,7 +92,7 @@ const allSolutions = [
         falla: "Imagenes de referencia",
         problem: "El equipo no manda imágenes de referencia.<br>Estan desactualizadas las imágenes de referencia.",
         category: "AOI-Vitrox",
-        solution: "Ingresa una tarjeta al equipo.<br>Selecciona la opción de Scan Full Board and Good Image.<br><img src=\"../fallas/img_fallas/solution_82002_1.jpg\" alt=\"solution_82002_1.jpg\"><br>Al finalizar, vuelve a inspeccionar la tarjeta.",
+        solution: "Ingresa una tarjeta al equipo.<br>Selecciona la opción de Scan Full Board and Good Image.<br><img src=\"../fallas/img_fallas/solution_82002_1.jpg\" alt=\"solution_82002_1.jpg\"><br>Al finalizar, vuelve a inspeccionar la tarjeta<br><br><br>En caso de ser tarjeta Long Board, repite el proceso en la parte 2.<br>Una vez terminado ve a C:\\cpi\\goodimages<br>Busca la carpeta de la parte 1 y parte 2.<br>Copia todo el contenido de la 1 y pegalo en la 2.<br>Te preguntara si quieres reemplazar o ignorar, darle ignorar<br>Ahora copia todo lo de la carpeta 2 en la 1<br>Te preguntara si quieres reemplazar o ignorar, darle ignorar<br>Al finalizar, vuelve a inspeccionar la tarjeta.",
         timeEst: "1 a 5 Min",
         show: "true"
     },
@@ -86,7 +110,7 @@ const allSolutions = [
         falla: "Tarjeta atorada",
         problem: "Se atoro tarjeta <br><img src=\"../fallas/img_fallas/problem_98559_1.jpg\" alt=\"problem_98559_1.jpg\"><br>",
         category: "AOI-Saki",
-        solution: "Revisa que el conveyor no este muy ajustado.<br>De ser así, ajústalo a la medida.<br><img src=\"../fallas/img_fallas/solution_98559_1.jpg\" alt=\"../fallas/img_fallas/solution_98559_1.jpg\"><br>",
+        solution: "Revisa donde se atoro la tarjeta, entre la FIFO & AOI<br>Que el el sensor de presencia si detecte el pallet<br>Revisa que el conveyor no este muy ajustado.<br>De ser así, ajústalo a la medida.<br><img src=\"../fallas/img_fallas/solution_98559_1.jpg\" alt=\"../fallas/img_fallas/solution_98559_1.jpg\"><br>",
         timeEst: "5 Min",
         show: "false"
     },
