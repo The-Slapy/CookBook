@@ -393,3 +393,14 @@ body.dark-theme .solution-list-unique li {
   color: #ffffff; /* Texto de los elementos */
   border-bottom: 1px solid #3a4f5a; /* Borde entre elementos */
 }
+
+#AOI,
+#SAKI,
+#MANUALES_SAKI,
+#VITROX_AOI,
+#MANUALES_VITROX,
+#AXI,
+#DAGE {
+    display: none;
+}
+

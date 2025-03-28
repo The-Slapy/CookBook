@@ -5,7 +5,8 @@ const allSolutions = [
        problem: "Se perdio la red en la AOI.<br>",
        category: "AOI-Saki",
        solution: "Haz un ping a cualquier otra maquina.<br>Revisa que la IP sea estatica y tenga bien sus <a href=\"../html/Datos_Maquinas.html\"><u>datos</u></a>.<br>Verifica que el cable ethernet no tenga falso.<br>En caso de no poder conectar, apoyate con IT.<br>",
-       timeEst: "5 a 60 Min"
+       timeEst: "5 a 60 Min",
+       show: "true"
     },
     {
        id: "14716",
@@ -13,7 +14,8 @@ const allSolutions = [
        problem: "Manda la siguiente alerta al iniciar la prueba.<br><br><img src=\"../fallas/img_fallas/problem_14716_1.jpg\" alt=\"problem_14716_1.jpg\"><br><br><img src=\"../fallas/img_fallas/problem_14716_2.jpg\" alt=\"problem_14716_2.jpg\"><br><br><img src=\"../fallas/img_fallas/problem_14716_3.jpg\" alt=\"problem_14716_3.jpg\"><br>La prueba continua, cuando termina de inspeccionar, se cierra el programa.<br>",
        category: "AOI-Saki",
        solution: "Nos menciona el error que tiene una falla con el MPVClient.<br>Revisamos que este deshabilitado.<br>Volvemos a probar la tarjeta.<br><br><img src=\"../fallas/img_fallas/solution_14716_1.jpg\" alt=\"solution_14716_1.jpg\"><br>",
-       timeEst: "< 5 Min"
+       timeEst: "< 5 Min",
+       show: "false"
     },
     {
        id: "97535",
@@ -21,7 +23,8 @@ const allSolutions = [
        problem: "La PLR recibe la información, pero no la abre.<br><br><img src=\"../fallas/img_fallas/problem_97535_1.jpg\" alt=\"problem_97535_1.jpg\"><br>",
        category: "AOI-Vitrox",
        solution: "Revisa que el disco duro de la PLR no este llene.<br>De ser asi, elimina información.<br>Asegurate de hacer respaldo de los Tiles en servidor 230.<br>Elimina información de C:\\Defects\\data.<br>En la AOI, vacia la carpeta C:\\cpi\\img.<br>Vacia el Index de la PLR.<br>Vuelve a probar la tarjeta.<br>",
-       timeEst: "< 5 Min"
+       timeEst: "< 5 Min",
+       show: "true"
     },
     {
        id: "57519",
@@ -85,7 +88,7 @@ const allSolutions = [
         category: "AOI-Saki",
         solution: "Vamos a la pestaña de Warning Control en la parte inferior.<br><br><img src=\"../fallas/img_fallas/solution_74562_1.jpg\" alt=\"solution_74562_1.jpg\"><br>Limpiamos la alerta de Warning<br><img src=\"../fallas/img_fallas/solution_74562_2.jpg\" alt=\"solution_74562_2.jpg\"><br>Depuramos el programa.<br>Volvemos a probar la tarjeta",
         timeEst: "1 a 5 Min",
-        show: "false",
+        show: "true",
     },
     {
         id: "82002",
@@ -112,7 +115,7 @@ const allSolutions = [
         category: "AOI-Saki",
         solution: "Revisa donde se atoro la tarjeta, entre la FIFO & AOI<br>Que el el sensor de presencia si detecte el pallet<br>Revisa que el conveyor no este muy ajustado.<br>De ser así, ajústalo a la medida.<br><img src=\"../fallas/img_fallas/solution_98559_1.jpg\" alt=\"../fallas/img_fallas/solution_98559_1.jpg\"><br>",
         timeEst: "5 Min",
-        show: "false"
+        show: "true"
     },
     {
         id: "68722",

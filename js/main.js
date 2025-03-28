@@ -122,7 +122,7 @@ function filterSolutionsUnique() {
         const idMatch = solution.id.toLowerCase().includes(searchTerm);
         const showMatch = fixedShow ? solution.show.toLowerCase() === fixedShow.toLowerCase() : true;
 
-        return solution.category === fixedCategory && showMatch && (problemMatch || fallaMatch || idMatch) ;
+        return solution.category === fixedCategory && (problemMatch || fallaMatch || idMatch) ;
     });
 
     displaySolutionsUnique(filteredSolutions);
@@ -238,3 +238,30 @@ const observer = new MutationObserver(() => {
 
 // Configurar el observador para observar cambios en el cuerpo del documento
 observer.observe(document.body, { childList: true, subtree: true });
+
+// Función para abrir una ventana emergente
+function abrirVentana(id) {
+    const ventana = document.getElementById(id);
+    if (ventana) {
+        ventana.style.display = "block";
+    }
+}
+
+// Función para cerrar una ventana emergente
+function cerrarVentana(id) {
+    const ventana = document.getElementById(id);
+    if (ventana) {
+        ventana.style.display = "none";
+    }
+}
+
+// Función de búsqueda en la tabla
+function doSearch() {
+    const input = document.getElementById("searchTerm").value.toLowerCase();
+    const rows = document.querySelectorAll("#DatosIP tbody tr");
+
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(input) ? "" : "none";
+    });
+}
