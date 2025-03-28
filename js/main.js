@@ -116,13 +116,14 @@ const fixedShow = categoryContainer ? categoryContainer.getAttribute('show') : "
 function filterSolutionsUnique() {
     const searchTerm = searchInputUnique.value.toLowerCase();
 
+    // Filtrar las soluciones que tienen show !== "false" y coinciden con el término de búsqueda
     const filteredSolutions = allSolutions.filter(solution => {
         const fallaMatch = solution.falla.toLowerCase().includes(searchTerm);
         const problemMatch = solution.problem.toLowerCase().includes(searchTerm);
         const idMatch = solution.id.toLowerCase().includes(searchTerm);
-        const showMatch = fixedShow ? solution.show.toLowerCase() === fixedShow.toLowerCase() : true;
+        const showMatch = solution.show !== "false"; // Aplicar el filtro de show
 
-        return solution.category === fixedCategory && (problemMatch || fallaMatch || idMatch) ;
+        return solution.category === fixedCategory && showMatch && (problemMatch || fallaMatch || idMatch);
     });
 
     displaySolutionsUnique(filteredSolutions);
