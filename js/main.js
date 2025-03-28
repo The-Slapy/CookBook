@@ -266,3 +266,19 @@ function doSearch() {
         row.style.display = text.includes(input) ? "" : "none";
     });
 }
+
+// Función para abrir una ventana emergente
+function abrirVentana(id) {
+    const ventana = document.getElementById(id);
+    if (ventana) {
+        ventana.style.display = "block";
+    }
+}
+
+// Función para cerrar una ventana emergente
+function cerrarVentana(id) {
+    const ventana = document.getElementById(id);
+    if (ventana) {
+        ventana.style.display = "none";
+    }
+}

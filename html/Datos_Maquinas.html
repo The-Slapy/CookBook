@@ -73,8 +73,32 @@
     </div>
     
     <div class="contenido-lateral"> <!--Informacion-->
-        <div class="Presentacion">
-            <h2>Datos de las Maquinas</h2>
+        <div class="Presentacion"> 
+               <h2>Datos de las Maquinas</h2>
+        
+        <!-- Botones para abrir ventanas emergentes -->
+        <div class="botones-emergentes">
+            <button class="btn-ventana-1" onclick="abrirVentana('ventana1', 'Contenido de la primera ventana emergente')">Abrir Ventana 1</button>
+            <button class="btn-ventana-2" onclick="abrirVentana('ventana2', 'Contenido de la segunda ventana emergente')">Abrir Ventana 2</button>
+        </div>
+        
+        <!-- Ventana Emergente 1 -->
+        <div id="ventana1" class="modal modal-ventana-1">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarVentana('ventana1')">&times;</span>
+                <h2>Ventana Emergente</h2>
+                <p id="contenido-ventana1"></p>
+            </div>
+        </div>
+        
+        <!-- Ventana Emergente 2 -->
+        <div id="ventana2" class="modal modal-ventana-2">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarVentana('ventana2')">&times;</span>
+                <h2>Ventana Emergente</h2>
+                <p id="contenido-ventana2"></p>
+            </div>
+        </div>
 
             <div class="Buscar" >
                 <form>
